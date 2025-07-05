@@ -1,13 +1,13 @@
-import "@/styles/globals.css";
+import "@/src/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
 
-import { Providers } from "./providers";
+import { siteConfig } from "../config/site";
+import { fontSans } from "../config/fonts";
+import { Navbar } from "../components/navbar";
 
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Navbar } from "@/components/navbar";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html lang="en" suppressHydrationWarning={false}>
       <head />
       <body
         className={clsx(
