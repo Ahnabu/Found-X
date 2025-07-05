@@ -1,9 +1,6 @@
-import { title } from "@/components/primitives";
+/* eslint-disable prettier/prettier */
+const About = () => {
+    return <div>This is About page.</div>;
+};
 
-export default function AboutPage() {
-  return (
-    <div>
-      <h1 className={title()}>About</h1>
-    </div>
-  );
-}
+export default About;
