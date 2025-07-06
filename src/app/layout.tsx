@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning={false}>
+    <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(

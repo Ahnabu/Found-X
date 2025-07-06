@@ -1,8 +1,10 @@
-import  envConfig  from "../../config/envConfig"
+/* eslint-disable prettier/prettier */
+import envConfig from "@/src/config/envConfig";
 
-const getRecentPosts = async()=>{
-       const res = await fetch(`${envConfig.baseApi}/found-items?limit=4`)
- const posts = await res.json()
- return posts
-}
-export default getRecentPosts
+export const getRecentPosts = async () => {
+  const res = await fetch(
+    `${envConfig.baseApi}/items?sortBy=-createdAt&limit=9`
+  );
+
+  return res.json();
+};
