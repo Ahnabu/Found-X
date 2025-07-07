@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { IPost } from '@/src/types';
 import Container from '@/src/components/UI/Container';
-import Card from '@/src/components/Card';
+import Card from '@/src/components/UI/Card';
 import { getRecentPosts } from '@/src/services/Recent-Posts';
 async function RecentPosts() {
 
