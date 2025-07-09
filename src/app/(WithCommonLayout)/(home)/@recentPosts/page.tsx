@@ -14,7 +14,6 @@ async function RecentPosts() {
 
     const posts = await getRecentPosts();
 
-    console.log(posts.data, "posts in recent posts");
 
     return (
         <Suspense fallback={<div className="flex justify-center items-center h-64">Loading...</div>}>

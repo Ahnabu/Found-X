@@ -6,9 +6,9 @@ import { SearchIcon } from '../../icons'
 const Landing = () => {
     return (
         <div
-            className="
-    h-[calc(100vh-64px)] bg-[url('/glass.jpg')] bg-cover bg-center ">
-            <div className='pt-32 max-w-xl flex-1 mx-auto'>
+            className=" max-h-screen min-h-[50%]
+   md:h-[calc(100vh-64px)] bg-[url('/glass.jpg')] bg-cover bg-center ">
+            <div className='md:pt-32 pt-6 max-w-xl flex-1 mx-auto'>
                 <form className='flex-1'>
                     <Input
                         aria-label='Search'

@@ -5,7 +5,7 @@ const layout = ({ children, recentPosts }: { children: ReactNode, recentPosts: R
     return (
         <div className="relative flex flex-col h-screen">
 
-            <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
+            <main className="container mx-auto max-w-7xl md:pt-16 pt-2 md:px-6 px-2 flex-grow">
                 {children}
                 {recentPosts}
             </main>
