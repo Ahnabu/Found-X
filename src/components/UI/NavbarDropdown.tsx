@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 "use client";
 
-import { Avatar } from "@heroui/avatar";
 import {
     Dropdown,
     DropdownItem,
@@ -9,9 +8,19 @@ import {
     DropdownTrigger,
 } from "@heroui/dropdown";
 import { useRouter } from "next/navigation";
+import { Avatar } from "@heroui/avatar";
+
+import { logout } from "@/src/services/AuthService";
+import { useUser } from "@/src/context/user.provider";
 
 export default function NavbarDropdown() {
     const router = useRouter();
+    const { user, setIsLoading: userLoading } = useUser();
+
+    const handleLogout = () => {
+        logout();
+        userLoading(true);
+    };
 
     const handleNavigation = (pathname: string) => {
         router.push(pathname);
@@ -20,19 +29,30 @@ export default function NavbarDropdown() {
     return (
         <Dropdown>
             <DropdownTrigger>
-                <Avatar className="cursor-pointer" name="Joe" />
+                <Avatar className="cursor-pointer" src={user?.profilePhoto} />
             </DropdownTrigger>
             <DropdownMenu aria-label="Static Actions">
                 <DropdownItem key={1} onClick={() => handleNavigation("/profile")}>
                     Profile
                 </DropdownItem>
-                <DropdownItem key={2} onClick={() => handleNavigation("/profile/settings")}>
+                <DropdownItem
+                    key={2}
+                    onClick={() => handleNavigation("/profile/settings")}
+                >
                     Settings
                 </DropdownItem>
-                <DropdownItem key={3} onClick={() => handleNavigation("/profile/create-post")}>
+                <DropdownItem
+                    key={3}
+                    onClick={() => handleNavigation("/profile/create-post")}
+                >
                     Create Post
                 </DropdownItem>
-                <DropdownItem key="delete" className="text-danger" color="danger">
+                <DropdownItem
+                    key="delete"
+                    className="text-danger"
+                    color="danger"
+                    onClick={() => handleLogout()}
+                >
                     Logout
                 </DropdownItem>
             </DropdownMenu>
