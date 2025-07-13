@@ -1,7 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react'
 
-function FoundItems() {
+import axiosInstance from '@/src/lib/AxiosInstance'
+
+
+
+async function FoundItems() {
+
+    const { data } = await axiosInstance.get('/found-items')
     return (
         <div>FoundItems</div>
     )

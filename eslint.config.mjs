@@ -93,7 +93,6 @@ export default defineConfig([globalIgnores([
         "react-hooks/exhaustive-deps": "off",
         "jsx-a11y/click-events-have-key-events": "warn",
         "jsx-a11y/interactive-supports-focus": "warn",
-        "prettier/prettier": "warn",
         "no-unused-vars": "off",
         "unused-imports/no-unused-vars": "off",
         "unused-imports/no-unused-imports": "warn",
@@ -124,6 +123,16 @@ export default defineConfig([globalIgnores([
 
             "newlines-between": "always",
         }],
+        "prettier/prettier": ["warn",
+            {
+                endOfLine: "auto",
+                singleQuote: true,
+                semi: false,
+                trailingComma: "all",
+                printWidth: 100,
+                tabWidth: 4,
+            },
+        ],
 
         "react/self-closing-comp": "warn",
 
