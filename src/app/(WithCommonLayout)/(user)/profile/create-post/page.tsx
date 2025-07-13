@@ -15,14 +15,14 @@ import { useRouter } from "next/navigation";
 
 import FXInput from "@/src/components/form/FXInput";
 import FXDatePicker from "@/src/components/form/FXDatePicker";
-import dateToISO from "@/src/utils/dateToISO";
-import FXSelect from "@/src/components/form/FXSelect";
-import { useGetCategories } from "@/src/hooks/categoreis.hook";
-import FXTextarea from "@/src/components/form/FXTextArea";
 import { AddIcon, TrashIcon } from "@/src/assets/icons";
 import { useUser } from "@/src/context/user.provider";
-import { useCreatePost } from "@/src/hooks/post.hook";
 import Loading from "@/src/components/UI/Loading";
+import FXTextarea from "@/src/components/form/FXTextArea";
+import FXSelect from "@/src/components/form/FXSelect";
+import { useGetCategories } from "@/src/hooks/categories.hooks";
+import { useCreatePost } from "@/src/hooks/post.hooks";
+import dateToISO from "@/src/utils/dateToTSO";
 
 const cityOptions = allDistict()
     .sort()
