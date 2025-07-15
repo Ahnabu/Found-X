@@ -1,38 +1,29 @@
-"use client";
-import { Avatar } from "@heroui/avatar";
-import { format } from "date-fns";
-import { Calendar, MapPin } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@heroui/button";
+'use client'
+import { Avatar } from '@heroui/avatar'
+import { format } from 'date-fns'
+import { Calendar, MapPin } from 'lucide-react'
+import Link from 'next/link'
+import { Button } from '@heroui/button'
 
-import ClaimRequestModal from "../../modals/ClaimRequestModal";
-import AuthenticationModal from "../../modals/AuthenticationModal";
+import ClaimRequestModal from '../../modals/ClaimRequestModal'
+import AuthenticationModal from '../../modals/AuthenticationModal'
 
-import ImageGallery from "./ImageGallery";
+import ImageGallery from './ImageGallery'
 
-import { useUser } from "@/src/context/user.provider";
-import { IPost, IUser } from "@/src/types";
+import { useUser } from '@/src/context/user.provider'
+import { IPost, IUser } from '@/src/types'
 
 interface IProps {
-    post: IPost;
+    post: IPost
 }
 
 export default function Post({ post }: IProps) {
-    const {
-        title,
-        dateFound,
-        description,
-        location,
-        city,
-        _id,
-        images,
-        user,
-        questions,
-    } = post || {};
+    const { title, dateFound, description, location, city, _id, images, user, questions } =
+        post || {}
 
-    const { name, email, profilePhoto } = (user as IUser) || {};
+    const { name, email, profilePhoto } = (user as IUser) || {}
 
-    const { user: loggedInUser } = useUser();
+    const { user: loggedInUser } = useUser()
 
     return (
         <div className="mb-2 rounded-md bg-default-100 p-4">
@@ -54,7 +45,7 @@ export default function Post({ post }: IProps) {
                             </Link>
                             <p className="flex items-center gap-1 text-xs">
                                 Found on: <Calendar width={14} />
-                                {format(new Date(dateFound), "dd MMM, yyyy")}
+                                {format(new Date(dateFound), 'dd MMM, yyyy')}
                             </p>
                         </div>
                         <div>
@@ -78,14 +69,12 @@ export default function Post({ post }: IProps) {
                             {!loggedInUser?.email && <AuthenticationModal id={_id} />}
                         </>
                     )}
-                    {email !== loggedInUser?.email && (
-                        <div className="w-[1px] bg-default-200" />
-                    )}
+                    {email !== loggedInUser?.email && <div className="w-[1px] bg-default-200" />}
                     <Button className="flex-1" variant="light">
                         Share
                     </Button>
                 </div>
             </div>
         </div>
-    );
+    )
 }
