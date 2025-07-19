@@ -20,7 +20,7 @@ import { useUser } from "@/src/context/user.provider";
 import Loading from "@/src/components/UI/Loading";
 import FXTextarea from "@/src/components/form/FXTextArea";
 import FXSelect from "@/src/components/form/FXSelect";
-import { useGetCategories } from "@/src/hooks/categories.hooks";
+import { useGetCategories } from "@/src/hooks/categories.hook";
 import { useCreatePost } from "@/src/hooks/post.hooks";
 import dateToISO from "@/src/utils/dateToTSO";
 
